@@ -8,20 +8,13 @@ import Login from './components/login/Login';
 import { Router } from '@mui/icons-material';
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false)
-  const [email, setEmail] = useState("")
+  
 
   return (
     <div className="App">
       <ResponsiveDrawer/>
-      <Home></Home>
-      <Router>
-        <Routes>
-      <Route path="/" element={<Home email={email} loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>} />
-          <Route path="/login" element={<Login setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
-          </Routes>
-
-      </Router>
+     
+      
     </div>
   );
 }
