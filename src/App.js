@@ -1,21 +1,32 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import './App.css';
-import ResponsiveDrawer from './components/dashboard/ResponsiveDrawer';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import Home from './components/login/home';
-import Login from './components/login/Login';
-import { Router } from '@mui/icons-material';
+import Login from "./components/login/Login.jsx";
 
 function App() {
   
 
+  
+
+ 
+
+  const HomeRoutes = () => {
+    return (
+      <Routes>
+        <Route path="/" element={<Login />} />
+        {/* <Route path="/register" element={<Register />} /> */}
+      </Routes>
+    );
+  };
+
+  const renderRoutes = () => {
+     return HomeRoutes();
+  };
+
   return (
-    <div className="App">
-      <ResponsiveDrawer/>
-     
+    <BrowserRouter>
+      {renderRoutes()}
       
-    </div>
+    </BrowserRouter>
   );
 }
 
